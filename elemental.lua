@@ -1,6 +1,3 @@
-local shopss = game.Players.LocalPlayer.PlayerGui.HUD.LeftCenter:WaitForChild("1").TextButton
-shopss:Destroy()
-
 local Sc = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
 Sc.Name = "CexsGUI"
 Sc.ResetOnSpawn = false
