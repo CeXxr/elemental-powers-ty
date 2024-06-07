@@ -142,7 +142,8 @@ Bf.MouseButton1Click:Connect(function()
 end)
 
 Bff.MouseButton1Click:Connect(function()
-local lp = game.Players.LocalPlayer
+while task.wait(1) do
+        local lp = game.Players.LocalPlayer
 local char = lp.Character
 local hum = char.HumanoidRootPart
 local name = lp.Name
@@ -156,6 +157,7 @@ local virtual = game:GetService('VirtualUser')
 virtual:CaptureController()
 virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
 virtual:TypeKey('e')
+        end
 end)
 
 Bo.MouseButton1Click:Connect(function()
