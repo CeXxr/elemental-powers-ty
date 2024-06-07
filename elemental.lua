@@ -227,7 +227,7 @@ Bsf.MouseButton1Click:Connect(function()
             if v.Name == "Dollar" then
                 v.CanCollide = false
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                task.wait(.1)
+                task.wait(.01)
             end
         end
     end
