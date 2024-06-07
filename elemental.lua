@@ -256,6 +256,8 @@ end)
 Bas.MouseButton1Click:Connect(function()
 for _, v in pairs(workspace:GetDescendants()) do
     if v.Name == "ProximityPrompt" and (v.Parent.Name == "Crate" and v.Parent.Parent.Name == "BalloonCrate") then
+        v.Parent.CanCollide = false
+        v.Parent.Parent.Balloon.CanCollide = false
         v.HoldDuration = 0
         local lp = game.Players.LocalPlayer
         local ch = lp.Character
@@ -274,7 +276,7 @@ Bcs.MouseButton1Click:Connect(function()
 for _, v in pairs(workspace.Treasure.Chests:GetChildren()) do
     if v.Name == "Chest" then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 3, 0)
-    task.wait(.5)
+    task.wait(1)
     local virtual = game:GetService('VirtualUser')
     virtual:CaptureController()
     virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
