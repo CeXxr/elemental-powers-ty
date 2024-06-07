@@ -275,13 +275,21 @@ end)
 Bcs.MouseButton1Click:Connect(function()
 for _, v in pairs(workspace.Treasure.Chests:GetChildren()) do
     if v.Name == "Chest" then
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 3, 0)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
     task.wait(1)
     local virtual = game:GetService('VirtualUser')
     virtual:CaptureController()
     virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
     virtual:TypeKey('e')
-    wait(.5)
+                task.wait()
+                virtual:CaptureController()
+    virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
+    virtual:TypeKey('e')
+                task.wait()
+                virtual:CaptureController()
+    virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
+    virtual:TypeKey('e')
+    wait(1)
    end
 end
 end)
