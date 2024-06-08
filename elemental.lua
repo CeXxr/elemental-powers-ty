@@ -154,8 +154,6 @@ task.wait()
 hum.CFrame = rebirthpad.CFrame + Vector3.new(0, 4, 0)
 task.wait()
 local virtual = game:GetService('VirtualUser')
-virtual:CaptureController()
-virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
 virtual:TypeKey('e')
         end
 end)
@@ -264,10 +262,11 @@ for _, v in pairs(workspace:GetDescendants()) do
         local hum = ch.HumanoidRootPart
         hum.CFrame = v.Parent.CFrame + Vector3.new(0, 5, 0)
         local virtual = game:GetService('VirtualUser')
-        virtual:CaptureController()
-        virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
         virtual:TypeKey('e')
-        wait(.5)
+                virtual:TypeKey('e')
+                virtual:TypeKey('e')
+                virtual:TypeKey('e')
+        wait(1)
     end
 end
 end)
@@ -276,20 +275,14 @@ Bcs.MouseButton1Click:Connect(function()
 for _, v in pairs(workspace.Treasure.Chests:GetChildren()) do
     if v.Name == "Chest" then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-    task.wait(1)
+    task.wait(.5)
     local virtual = game:GetService('VirtualUser')
-    virtual:CaptureController()
-    virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
     virtual:TypeKey('e')
                 task.wait()
-                virtual:CaptureController()
-    virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
     virtual:TypeKey('e')
                 task.wait()
-                virtual:CaptureController()
-    virtual:MoveMouse(Vector2.new(50, 50), game.Workspace.CurrentCamera.CFrame)
     virtual:TypeKey('e')
-    wait(1)
+    wait(.5)
    end
 end
 end)
