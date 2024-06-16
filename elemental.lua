@@ -222,15 +222,20 @@ Bn.MouseButton1Click:Connect(function()
 end)
 
 Bsf.MouseButton1Click:Connect(function()
-    while task.wait() do
-        for _, v in pairs(workspace:GetChildren()) do
-            if v.Name == "Dollar" then
-                v.CanCollide = false
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                task.wait(.01)
-            end
+    local lp = game.Players.LocalPlayer
+    local char = lp.Character
+    local hum = char.HumanoidRootPart
+    local name = lp.Name
+    local tycoon = game.Workspace.Tycoons[name]
+    local collect = tycoon.Auxiliary.Collector.Collect
+    for _, v in pairs(workspace:GetChildren()) do
+        if v.Name == "Dollar" then
+            v.CanCollide = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            task.wait(.01)
         end
     end
+    hum.CFrame = collect.CFrame
 end)
 
 Bc.MouseButton1Click:Connect(function()
